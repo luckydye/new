@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# resolve template variables
+
+cat package.json | envsubst > package.json
+cat README.md | envsubst > README.md
+
+# pin all dependencies
+
+mise use task@latest --pin
+mise use bun@latest --pin
+
+bun add @types/bun@latest
+
+# clean setup script
+
+rm $0

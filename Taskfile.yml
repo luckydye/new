@@ -1,0 +1,19 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  default:
+    silent: true
+    cmd: task -l --sort none
+
+  setup:
+    cmd: bun install --frozen-lockfile
+
+  dev:
+    deps: [setup]
+    cmd: bun src/index.html --console
+
+  build:
+    deps: [setup]
+    cmd: bun ./build.ts
