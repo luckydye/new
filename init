@@ -3,7 +3,9 @@
 # resolve template variables
 
 cat package.json | envsubst > package.json
-cat README.md | envsubst > README.md
+
+envsubst < package.json > package.json.tmp && mv package.json.tmp package.json
+envsubst < README.md > README.md.tmp && mv README.md.tmp README.md
 
 # pin all dependencies
 
