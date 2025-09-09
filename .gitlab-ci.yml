@@ -24,7 +24,6 @@ pages:
   environment:
     name: preview
     url: https://${CI_PROJECT_NAMESPACE}.pages.s-v.de/${CI_PROJECT_TITLE}
-  artifacts:
-    paths:
-      - dist
+  pages:
+    publish: dist
   script: task build
