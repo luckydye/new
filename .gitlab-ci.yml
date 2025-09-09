@@ -1,7 +1,9 @@
 stages:
   - deploy
 
-image: jdxcode/mise:2025.9.6
+image:
+  name: jdxcode/mise:2025.9.6
+  entrypoint: [""]
 
 cache: &global_cache
   key: ${CI_COMMIT_REF_SLUG}
